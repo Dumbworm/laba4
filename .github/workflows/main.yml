@@ -8,7 +8,8 @@ on:
 jobs:
   build:
     name: Build Docker image
-    run-on: windows
+    runs-on: windows-latest   
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -29,3 +30,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+
